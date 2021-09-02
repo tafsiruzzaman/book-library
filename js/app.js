@@ -37,7 +37,7 @@ const cheakLoadedData = data => {
         clearSearchResult();
     }
     else {
-        // console.log(data)
+        console.log(data)
         displayResultQuantity(`${data.numFound} books found for "${data.q}"`);
         displaySearchResult(data.docs)
     };
@@ -73,7 +73,7 @@ const displaySearchResult = books => {
                     <h5 class="card-title">${book.title}</h5>
                     <p class="card-text"><span class="fw-bold">Author: </span>${book.author_name ? book.author_name[0] : "Unknown"}</p>
                     <p class="card-text"><span class="fw-bold">Publisher: </span>${book.publisher ? book.publisher[0] : "Unknown"}</p>
-                    <p class="card-text"><span class="fw-bold">Publish Date: </span>${book.publish_date ? book.publish_date[0] : "Unknown"}</p>
+                    <p class="card-text"><span class="fw-bold">Publish Date: </span>${book.first_publish_year ? book.first_publish_year : "Unknown"}</p>
                 </div>
             </div>
         `;
