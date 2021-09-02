@@ -9,6 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- fontawesome kit -->
     <script src="https://kit.fontawesome.com/18b39ad459.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url(images/back.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .img-height {
+            height: 401px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,53 +31,28 @@
             <!-- input group -->
             <div class="input-group mb-3 w-75 mx-auto">
                 <input type="text" class="form-control" id="input-field" placeholder="Search Books" aria-label="Search Books" aria-describedby="search-btn">
-                <button class="btn btn-outline-info" type="button" id="search-btn" onclick="startDataLoadProcess()"><i class="fas fa-search"></i> Search</button>
+                <button class="btn btn-info" type="button" id="search-btn" onclick="startDataLoadProcess()"><i class="fas fa-search"></i> Search</button>
             </div>
 
             <!-- error section -->
-            <p id="error-message" class="text-danger text-center"></p>
+            <h4 id="error-message" class="text-warning text-center"></h4>
 
             <!-- result quantity -->
-            <p id="result-quantity" class="text-danger text-center"></p>
+            <h4 id="result-quantity" class="text-danger text-center"></h4>
 
             <!-- search resrst -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-lg-4 gy-4 mx-auto mt-2">
-                <div class="col">
+            <div id="search-result-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-lg-4 gy-4 mx-auto mt-2">
+                <!-- <div class="col">
                   <div class="card h-100 px-2 py-2">
-                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top img-fluid" alt="...">
+                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top img-fluid" height="115px" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h5 class="card-title">Javascript</h5>
+                      <p class="card-text"><span class="fw-bold">Author: </span> Kuddus ali</p>
+                      <p class="card-text"><span class="fw-bold">Publisher: </span> Kuddus ali</p>
+                      <p class="card-text"><span class="fw-bold">publish Date: </span> Kuddus ali</p>
                     </div>
                   </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 px-2 py-2">
-                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 px-2 py-2">
-                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 px-2 py-2">
-                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
