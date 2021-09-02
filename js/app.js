@@ -37,7 +37,7 @@ const cheakLoadedData = data => {
         clearSearchResult();
     }
     else {
-        console.log(data)
+        // console.log(data)
         displayResultQuantity(`${data.numFound} books found for "${data.q}"`);
         displaySearchResult(data.docs)
     };
