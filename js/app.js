@@ -56,7 +56,7 @@ const displaySearchResult = books => {
     const resultContainer = document.getElementById('search-result-container');
     clearSearchResult();
     books.forEach(book => {
-        console.log(book)
+        // console.log(book)
         const div = document.createElement('div');
         div.classList = 'col';
         let imgUrl = '';
