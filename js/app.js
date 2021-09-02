@@ -3,7 +3,8 @@ const startDataLoadProcess = () => {
     const searchText = inputField.value;
     if(searchText === '') {
         displayResultQuantity('');
-        displayErrorMessage('please write something')
+        displayErrorMessage('please write something');
+        clearSearchResult();
     }
     else {
         displayErrorMessage('');
@@ -25,6 +26,7 @@ const loadSearchData = (searchText) => {
     .catch(err => {
         console.log(err)
         displayErrorMessage('no books found');
+        clearSearchResult();
     });
 };
 
@@ -32,22 +34,27 @@ const cheakLoadedData = data => {
     if(data.numFound === 0) {
         displayResultQuantity('');
         displayErrorMessage('no books found');
+        clearSearchResult();
     }
     else {
         // console.log(data)
         displayResultQuantity(`${data.numFound} books found for "${data.q}"`);
-        displaySearchData(data.docs)
+        displaySearchResult(data.docs)
     };
 };
 
 const displayResultQuantity = (message) => {
     const resultQuantity = document.getElementById('result-quantity');
     resultQuantity.innerText = message;
-}
+};
 
-const displaySearchData = books => {
+const clearSearchResult = () => {
+    document.getElementById('search-result-container').innerHTML = '';
+};
+
+const displaySearchResult = books => {
     const resultContainer = document.getElementById('search-result-container');
-    resultContainer.innerHTML = '';
+    clearSearchResult();
     for(book of books) {
         // console.log(book)
         const div = document.createElement('div');
