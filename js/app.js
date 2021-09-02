@@ -33,7 +33,7 @@ const loadSearchData = (searchText) => {
 const cheakLoadedData = data => {
     if(data.numFound === 0) {
         displayResultQuantity('');
-        displayErrorMessage('no books found');
+        displayErrorMessage('no book found');
         clearSearchResult();
     }
     else {
@@ -61,7 +61,7 @@ const displaySearchResult = books => {
         div.classList = 'col';
         let imgUrl = '';
         if (!book.cover_i) {
-            imgUrl = `images/no.png`
+            imgUrl = `images/no.png`;
         }
         else {
             imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
@@ -73,7 +73,7 @@ const displaySearchResult = books => {
                     <h5 class="card-title">${book.title}</h5>
                     <p class="card-text"><span class="fw-bold">Author: </span>${book.author_name ? book.author_name[0] : "Unknown"}</p>
                     <p class="card-text"><span class="fw-bold">Publisher: </span>${book.publisher ? book.publisher[0] : "Unknown"}</p>
-                    <p class="card-text"><span class="fw-bold">Publish Date: </span>${book.first_publish_year ? book.first_publish_year : "Unknown"}</p>
+                    <p class="card-text"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : "Unknown"}</p>
                 </div>
             </div>
         `;
